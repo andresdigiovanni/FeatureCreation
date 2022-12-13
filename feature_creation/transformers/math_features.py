@@ -64,7 +64,7 @@ def _math_features_transform(df, transformations):
 
 
 def _operations(add_operations_without_order):
-    ops = ["truediv", "floordiv", "mod", "pow"]
+    ops = ["truediv", "floordiv", "mod"]
 
     if add_operations_without_order:
         ops += ["sum", "rest", "prod", "mean", "hypotenuse"]
@@ -96,9 +96,6 @@ def _op_columns(col_1, col_2, op):
 
     elif op == "mod":
         return col_1 % col_2
-
-    elif op == "pow":
-        return col_1**col_2
 
 
 def _add_transformation(col_1, col_2, op, trans_X, transformations):
